@@ -1,4 +1,5 @@
 @extends('cms::layouts.master')
+@include('cms::layouts.startup')
 
 @section('content')
     <div class="container">

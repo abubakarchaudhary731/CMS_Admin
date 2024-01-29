@@ -44,21 +44,21 @@ class CMSPostController extends Controller
     // Update Post
     public function update(Request $request, $id)
     {
-        $update = DB::table('cms::createPostPage')->where('id', $id)->update([
+        $update = DB::table('cms_posts')->where('id', $id)->update([
             'description' => $request->description,
             'updated_at' => now(),
         ]);
         if ($update) {
-            return redirect()->route('cms')->with('success', 'Post updated successfully');
+            return redirect()->route('cms.index')->with('success', 'Post updated successfully');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }
     } 
 
      // Delete Post
-     public function delete(Request $request)
+     public function delete($id)
      {
-         DB::table('cms_posts')->where('id', $request->id)->delete();
+         DB::table('cms_posts')->where('id', $id)->delete();
          return redirect()->back()->with('success', 'Post deleted successfully');
      }
 

@@ -36,7 +36,21 @@
     {{-- {{ module_vite('build-cms', 'resources/assets/js/app.js') }} --}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <script>
+   <script>
+    function navbarColorOnResize() {
+    var navbar_classes = document.querySelector('.navbar').classList; // Assuming the navbar has the 'navbar' class
+
+    if (navbar_classes) {
+        // Proceed only if navbar_classes is not null or undefined
+        if (window.scrollY > 50) {
+            navbar_classes.remove('navbar-transparent');
+        } else {
+            navbar_classes.add('navbar-transparent');
+        }
+    }
+}
+   </script>
+   <script>
         tinymce.init({
           selector: 'textarea',
           plugins: 'ai tinycomments mentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed permanentpen footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',

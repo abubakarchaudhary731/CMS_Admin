@@ -23,8 +23,8 @@ Route::controller(CMSPostController::class)->group(function()
     Route::get('cms/create', 'viewCreatePage')->name('cms.view');
     Route::post('cms/create/post', 'createCmsPost')->name('cms.post.create');
     Route::get('cms/update/{id}', 'edit')->name('cms.post.edit');
-    Route::post('cms/update', 'update')->name('cms.post.update');
-    Route::post('cms/delete{id}', 'delete')->name('cms.post.delete');
+    Route::post('cms/update{id}', 'update')->name('cms.post.update');
+    Route::get('cms/delete{id}', 'delete')->name('cms.post.delete');
     Route::get('cms/view/{id}', 'view')->name('cms.post.view');
 });
 
