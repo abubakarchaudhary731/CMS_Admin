@@ -182,5 +182,18 @@
             </div>
         </div>
     </div>
+    <div class="container py-4">
+        <h2 class="text-center"> Your All Posts </h2>
+        <div>
+            @foreach($posts as $post)
+                <div class="card my-2">
+                    <div class="card-body">
+                        <h5 class="card-title"> {{session()->has('user_details') ? session('user_details')['user_email'] : ''}} </h5>
+                        <p class="card-text">{!! $post->description !!}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 </div>
 @endsection

@@ -9,9 +9,9 @@
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Money</p>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">Total Posts</p>
                 <h5 class="font-weight-bolder mb-0">
-                  $53,000
+                  {{$totalPosts}}
                   <span class="text-success text-sm font-weight-bolder">+55%</span>
                 </h5>
               </div>
@@ -31,11 +31,10 @@
           <div class="row">
             <div class="col-8">
               <div class="numbers">
-                <p class="text-sm mb-0 text-capitalize font-weight-bold">Today's Users</p>
-                <h5 class="font-weight-bolder mb-0">
-                  2,300
-                  <span class="text-success text-sm font-weight-bolder">+3%</span>
-                </h5>
+                <p class="text-sm mb-0 text-capitalize font-weight-bold">User Name</p>
+                <p class="mb-0">
+                  {{session()->has('user_details') ? session('user_details')['user_email'] : ''}}
+                </p>
               </div>
             </div>
             <div class="col-4 text-end">
